@@ -1,6 +1,6 @@
 set nocompatible
-call pathogen#infect()
-call pathogen#helptags()
+"call pathogen#infect()
+"call pathogen#helptags()
 
 let mapleader = ","
 syntax enable
