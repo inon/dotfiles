@@ -62,12 +62,12 @@ set showmatch
 set smartcase
 set smartindent
 set term=screen-256color
-set ts=4 sts=2 sw=4 expandtab
+set ts=2 sts=2 sw=2 expandtab
 set visualbell
-set winheight=5
-set winheight=999
+" set winheight=5
+" set winheight=999
 "set winminheight=5
-set winwidth=50
+" set winwidth=50
 " }}}
 
 " Show syntax highlighting groups for word under cursor
@@ -113,8 +113,10 @@ set statusline+=c%c
 set statusline+=,l%l
 set statusline+=/%L\ 
 
-set laststatus=2
+au BufReadPost *.ss set syntax=html
 
+set laststatus=2
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 " }}}
 
 " vim: foldmethod=marker foldmarker={{{,}}}
