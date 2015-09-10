@@ -1,18 +1,8 @@
-" ========================================================================
-" Vundle stuff
-" ========================================================================
 set nocompatible " Required by vundle
 filetype off     " Required by vundle
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-
-" My bundles
 Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tomtom/tcomment_vim'
@@ -33,15 +23,28 @@ Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
 Plugin 'The-NERD-Commenter'
 Plugin 'groenewege/vim-less'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
+Plugin 'evidens/vim-twig'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'kien/ctrlp.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Yggdroot/indentLine'
+call vundle#end()
+filetype plugin indent on
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace
 " Use the colorscheme from above
-colorscheme atom
+colorscheme Tomorrow-Night-Eighties
+"GVim
+let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+let g:indentLine_char = '┆'
 
 " ========================================================================
 " Ruby stuff
@@ -70,6 +73,10 @@ augroup END
 " ================
 let mapleader = ","
 
+" This does what it says on the tin. It will check your file on open too, not just on save.
+" You might not want this, so just leave it out if you don't.
+let g:syntastic_check_on_open=1
+
 " Normal mode mappings
 map <C-s> :w<CR>
 "map <leader>ev :vs $MYVIMRC<CR>
@@ -85,6 +92,7 @@ nnoremap <leader>b :CommandTBuffer<CR>
 map <D-r> :CommandT<CR>
 map <D-e> :CommandTBuffer<CR>
 noremap <F4> :set hlsearch! hlsearch?<CR>
+nmap <leader>h :nohlsearch<cr>
 
 " Tabs mapping
 map <D-S-]> gt
@@ -99,11 +107,13 @@ map <D-7> 7gt
 map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
+imap <C-c> <CR><Esc>O
 
+set conceallevel=0 "json double quotes issue"
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set history=500		" keep 500 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+set history=500 " keep 500 lines of command line history
+set ruler "show the cursor position all the time
+set showcmd "display incomplete commands
 set autoindent
 set showmatch
 set nowrap
@@ -116,24 +126,29 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set noincsearch
-set ignorecase smartcase
+set ignorecase
+set smartcase
 set laststatus=2  " Always show status line.
 set relativenumber
 set gdefault " assume the /g flag on :s substitutions to replace all matches in a line
-set autoindent " always set autoindenting on
 set guioptions-=r  "scrollbar
 set guioptions-=L  "scrolbar
-set list listchars=tab:»·
 set wrap
-set textwidth=50
-set wrapmargin=0
-
+"set textwidth=50
+"set wrapmargin=0
 set incsearch
 set hlsearch
 set t_Co=8
 set noerrorbells 
 set novisualbell
 set t_vb=
+set lines=999 columns=9999
+set directory=/tmp
+
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
 syntax on
 autocmd! GUIEnter * set vb t_vb=
 
@@ -193,4 +208,27 @@ au BufWritePre *.rb :%s/\s\+$//e
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
+endif
+
+" MacVim GUI mode
+if has("gui_macvim")
+  set guifont=Monaco:h12
+  set guioptions=aAce
+  set fuoptions=maxvert,maxhorz
+  set noballooneval
+
+  " resize current buffer by +/- 5
+  nnoremap <M-Right> :vertical resize +5<CR>
+  nnoremap <M-Left>  :vertical resize -5<CR>
+  nnoremap <M-Up>    :resize -5<CR>
+  nnoremap <M-Down>  :resize +5<CR>
+
+  " Command+Option+Right for next
+  map <D-M-Right> :tabn<CR>
+  " Command+Option+Left for previous
+  map <D-M-Left> :tabp<CR>
+
+  " Automatically resize splits
+  " when resizing MacVim window
+  autocmd VimResized * wincmd =
 endif
