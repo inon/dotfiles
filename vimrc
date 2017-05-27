@@ -22,6 +22,7 @@ Plug 'isruslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
+Plug 'slashmili/alchemist.vim'
 call plug#end()
 
 " Color Scheme
@@ -38,6 +39,7 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set hlsearch
 set ignorecase
+set t_Co=256
 colorscheme solarized
 
 let g:indent_guide_start_level=2
