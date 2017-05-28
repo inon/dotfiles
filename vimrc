@@ -22,6 +22,8 @@ Plug 'isruslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 " Color Scheme
