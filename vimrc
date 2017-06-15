@@ -5,7 +5,6 @@ set backspace=indent,eol,start
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -24,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Color Scheme
@@ -46,10 +46,13 @@ let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
 let g:gitgutter_sign_column_always = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+noremap <C-P> :FZF<CR>
+let g:fzf_layout = { 'down': '~20%' }
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 "make jj do esc"
 inoremap jj <Esc>
@@ -57,3 +60,5 @@ inoremap jj <Esc>
 "make esc do nothing"
 inoremap <Esc> <Nop>
 
+"nerd tree
+map <C-n> :NERDTreeToggle<CR>
