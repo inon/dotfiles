@@ -24,6 +24,8 @@ Plug 'fatih/vim-go'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/gv.vim'
 call plug#end()
 
 " Color Scheme
@@ -54,11 +56,8 @@ noremap <C-P> :FZF<CR>
 let g:fzf_layout = { 'down': '~20%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
-"make jj do esc"
-inoremap jj <Esc>
-
-"make esc do nothing"
-inoremap <Esc> <Nop>
-
 "nerd tree
 map <C-n> :NERDTreeToggle<CR>
+
+" remove unwanted white space
+autocmd BufWritePre *.py :%s/\s\+$//e
