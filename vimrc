@@ -26,6 +26,9 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
+Plug 'prettier/vim-prettier', { 
+      \ 'do': 'yarn install', 
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 call plug#end()
 
 " Color Scheme
@@ -42,6 +45,8 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set hlsearch
 set ignorecase
+" yank to clipboard
+set clipboard=unnamed
 colorscheme solarized
 
 let g:indent_guide_start_level=2
