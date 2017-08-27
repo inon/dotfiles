@@ -27,6 +27,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/seoul256.vim'
 Plug 'prettier/vim-prettier', { 
       \ 'do': 'yarn install', 
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
@@ -48,7 +49,8 @@ set hlsearch
 set ignorecase
 " yank to clipboard
 set clipboard=unnamed
-colorscheme solarized
+colo seoul256
+let g:seoul256_background = 233
 
 let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
