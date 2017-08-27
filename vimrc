@@ -26,6 +26,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'prettier/vim-prettier', { 
       \ 'do': 'yarn install', 
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
@@ -66,3 +67,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 " remove unwanted white space
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
