@@ -34,6 +34,7 @@ Plug 'prettier/vim-prettier', {
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 call plug#end()
 
+let g:seoul256_background = 233
 " Color Scheme
 syntax enable
 " set background=dark
@@ -51,8 +52,8 @@ set ignorecase
 " yank to clipboard
 set clipboard=unnamed
 colo seoul256
+colorscheme seoul256
 
-let g:seoul256_background = 233
 let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
