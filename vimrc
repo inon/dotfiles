@@ -28,6 +28,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/seoul256.vim'
+Plug 'rking/ag.vim'
 Plug 'prettier/vim-prettier', { 
       \ 'do': 'yarn install', 
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
@@ -35,7 +36,7 @@ call plug#end()
 
 " Color Scheme
 syntax enable
-set background=dark
+" set background=dark
 set ts=2 sw=2 et
 set laststatus=2
 set ruler
@@ -50,8 +51,8 @@ set ignorecase
 " yank to clipboard
 set clipboard=unnamed
 colo seoul256
-let g:seoul256_background = 233
 
+let g:seoul256_background = 233
 let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
