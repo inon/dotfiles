@@ -2,6 +2,7 @@ filetype indent on
 set number
 set backspace=indent,eol,start
 
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
@@ -29,6 +30,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/seoul256.vim'
 Plug 'rking/ag.vim'
+Plug 'wikitopian/hardmode'
 Plug 'prettier/vim-prettier', { 
       \ 'do': 'yarn install', 
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
@@ -66,6 +68,9 @@ noremap <C-P> :FZF<CR>
 let g:fzf_layout = { 'down': '~20%' }
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
+" leader
+:let mapleader=","
+
 "nerd tree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -77,3 +82,6 @@ xmap ga <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" HardMode Toggle
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
