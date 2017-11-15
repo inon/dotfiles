@@ -28,7 +28,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/seoul256.vim'
-Plug 'rking/ag.vim'
+Plug 'easymotion/vim-easymotion'
 Plug 'prettier/vim-prettier', { 
       \ 'do': 'yarn install', 
       \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
@@ -49,15 +49,13 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set hlsearch
 set ignorecase
-" yank to clipboard
-set clipboard=unnamed
-colo seoul256
+" colo seoul256
 colorscheme seoul256
 
 let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 " let g:ctrlp_map = '<c-p>'
@@ -77,3 +75,8 @@ xmap ga <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+set clipboard+=unnamed
+
+set relativenumber
+set norelativenumber  " turn relative line numbers off
+set relativenumber!   " toggle relative line numbers
