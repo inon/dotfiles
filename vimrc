@@ -2,7 +2,6 @@ filetype indent on
 set number
 set backspace=indent,eol,start
 
-
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
@@ -10,7 +9,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'valloric/youcompleteme'
+Plug 'roxma/nvim-completion-manager'
 Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/tabular'
@@ -32,12 +31,11 @@ Plug 'junegunn/seoul256.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 Plug 'wikitopian/hardmode'
-Plug 'prettier/vim-prettier', { 
-      \ 'do': 'yarn install', 
-      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 let g:seoul256_background = 233
+
 " Color Scheme
 syntax enable
 " set background=dark
@@ -89,3 +87,7 @@ set relativenumber!   " toggle relative line numbers
 
 " HardMode Toggle
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
