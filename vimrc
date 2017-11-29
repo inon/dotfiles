@@ -32,6 +32,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 Plug 'wikitopian/hardmode'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'janko-m/vim-test'
 call plug#end()
 
 let g:seoul256_background = 233
