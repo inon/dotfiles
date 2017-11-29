@@ -81,14 +81,11 @@ xmap ga <Plug>(EasyAlign)
 "
 " " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-<<<<<<< HEAD
 set clipboard+=unnamed
 
 set relativenumber
 set norelativenumber  " turn relative line numbers off
 set relativenumber!   " toggle relative line numbers
-=======
 
 " HardMode Toggle
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
->>>>>>> 160e6677922dea9955d4ed358f2c0fd7960c6874
