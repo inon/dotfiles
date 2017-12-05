@@ -85,3 +85,6 @@ nmap ga <Plug>(EasyAlign)
 
 " HardMode Toggle
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
