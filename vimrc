@@ -33,6 +33,7 @@ Plug 'rking/ag.vim'
 Plug 'wikitopian/hardmode'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'janko-m/vim-test'
+Plug 'jamshedvesuna/vim-markdown-preview'
 call plug#end()
 
 let g:seoul256_background = 233
@@ -89,12 +90,10 @@ set relativenumber!   " toggle relative line numbers
 " HardMode Toggle
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-<<<<<<< HEAD
 " format with goimports instead of gofmt
 let g:go_fmt_command = "goimports"
-=======
+"
 " Prettier
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
 let g:prettier#config#semi = 'false'
->>>>>>> 73b4e9380255927d044c322efb69ebb6e6128970
