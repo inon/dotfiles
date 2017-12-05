@@ -97,3 +97,8 @@ let g:go_fmt_command = "goimports"
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md PrettierAsync
 let g:prettier#config#semi = 'false'
+
+" markdown
+" requirements brew install grip
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
