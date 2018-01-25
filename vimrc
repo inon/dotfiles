@@ -40,6 +40,7 @@ Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentline'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rizzatti/dash.vim'
 call plug#end()
 
 let g:seoul256_background = 233
