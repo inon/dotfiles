@@ -5,17 +5,18 @@ set backspace=indent,eol,start
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-commentary'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'roxma/nvim-completion-manager'
-Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-commentary'
 Plug 'mxw/vim-jsx'
 Plug 'isruslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -24,6 +25,7 @@ Plug 'fatih/vim-go'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
@@ -34,6 +36,10 @@ Plug 'wikitopian/hardmode'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'janko-m/vim-test'
 Plug 'jamshedvesuna/vim-markdown-preview'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mattn/emmet-vim'
+Plug 'Yggdroot/indentline'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 let g:seoul256_background = 233
