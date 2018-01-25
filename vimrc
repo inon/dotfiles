@@ -12,7 +12,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'roxma/nvim-completion-manager'
 Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -40,6 +39,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentline'
 Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 let g:seoul256_background = 233
