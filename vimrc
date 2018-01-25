@@ -113,3 +113,12 @@ let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_toggle=3
 
 let g:deoplete#enable_at_startup = 1
+
+set spell
+set complete+=kspell
+set breakindent
+set showbreak=\\\\\
+set synmaxcol=200
+set wildmenu
+set wildmode=full
+autocmd VimResized * wincmd =
