@@ -41,6 +41,7 @@ Plug 'Yggdroot/indentline'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rizzatti/dash.vim'
+Plug 'elmcast/elm-vim'
 call plug#end()
 
 let g:seoul256_background = 233
