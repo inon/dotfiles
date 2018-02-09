@@ -5,29 +5,50 @@ set backspace=indent,eol,start
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-commentary'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'valloric/youcompleteme'
-Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-commentary'
 Plug 'mxw/vim-jsx'
 Plug 'isruslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'slashmili/alchemist.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/seoul256.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'rking/ag.vim'
+Plug 'wikitopian/hardmode'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'janko-m/vim-test'
+Plug 'jamshedvesuna/vim-markdown-preview'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mattn/emmet-vim'
+Plug 'Yggdroot/indentline'
+Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rizzatti/dash.vim'
+Plug 'elmcast/elm-vim'
 call plug#end()
+
+let g:seoul256_background = 233
 
 " Color Scheme
 syntax enable
-set background=dark
+" set background=dark
 set ts=2 sw=2 et
 set laststatus=2
 set ruler
@@ -39,21 +60,67 @@ set backupdir=/private/tmp
 set dir=/private/tmp
 set hlsearch
 set ignorecase
-set t_Co=256
-colorscheme solarized
+" colo seoul256
+colorscheme seoul256
 
 let g:indent_guide_start_level=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
-let g:gitgutter_sign_column_always = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+set signcolumn=yes
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+noremap <C-P> :FZF<CR>
+let g:fzf_layout = { 'down': '~20%' }
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
-"make jj do esc"
-inoremap jj <Esc>
+" leader
+:let mapleader=","
 
-"make esc do nothing"
-inoremap <Esc> <Nop>
+"nerd tree
+map <C-n> :NERDTreeToggle<CR>
+
+" remove unwanted white space
+autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+set clipboard+=unnamed
+
+set relativenumber
+set norelativenumber  " turn relative line numbers off
+set relativenumber!   " toggle relative line numbers
+
+" HardMode Toggle
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" format with goimports instead of gofmt
+let g:go_fmt_command = "goimports"
+"
+" Prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+let g:prettier#config#semi = 'false'
+
+" markdown
+" requirements brew install grip
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_toggle=3
+
+let g:deoplete#enable_at_startup = 1
+
+set spell
+set complete+=kspell
+set breakindent
+set showbreak=\\\\\
+set synmaxcol=200
+set wildmenu
+set wildmode=full
+autocmd VimResized * wincmd =
 
