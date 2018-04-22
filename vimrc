@@ -42,6 +42,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rizzatti/dash.vim'
 Plug 'elmcast/elm-vim'
+Plug 'mhartington/nvim-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
 call plug#end()
 
 let g:seoul256_background = 233
