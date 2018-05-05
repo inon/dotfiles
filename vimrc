@@ -44,6 +44,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'elmcast/elm-vim'
 Plug 'mhartington/nvim-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'w0rp/ale'
 call plug#end()
 
 let g:seoul256_background = 233
@@ -82,6 +83,7 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 "nerd tree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " remove unwanted white space
 autocmd BufWritePre *.py :%s/\s\+$//e
@@ -108,6 +110,23 @@ let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
 let g:prettier#config#semi = 'false'
 
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
+let g:ale_linters = {
+\  'javascript': ['flow'],
+\}
+"highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+"highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+let g:ale_sign_error = 'X' " could use emoji
+let g:ale_sign_warning = '?' " could use emoji
+let g:ale_statusline_format = ['X %d', '? %d', '']
+" %linter% is the name of the linter that provided the message
+" %s is the error or warning message
+let g:ale_echo_msg_format = '%linter% says %s'
+" Map keys to navigate between lines with errors and warnings.
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
+
 " markdown
 " requirements brew install grip
 let vim_markdown_preview_github=1
@@ -125,4 +144,3 @@ set synmaxcol=200
 set wildmenu
 set wildmode=full
 autocmd VimResized * wincmd =
-
