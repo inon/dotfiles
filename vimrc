@@ -82,6 +82,7 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 "nerd tree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " remove unwanted white space
 autocmd BufWritePre *.py :%s/\s\+$//e
@@ -118,6 +119,7 @@ let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_toggle=3
 
 let g:deoplete#enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 set spell
 set complete+=kspell
@@ -128,3 +130,7 @@ set wildmenu
 set wildmode=full
 autocmd VimResized * wincmd =
 
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
