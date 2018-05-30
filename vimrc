@@ -12,19 +12,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/tabular'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-ruby/vim-ruby'
-Plug 'mxw/vim-jsx'
-Plug 'isruslan/vim-es6'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'fatih/vim-go'
-Plug 'slashmili/alchemist.vim'
-Plug 'elixir-lang/vim-elixir'
 Plug 'scrooloose/nerdtree'
-" Plug 'scrooloose/syntastic'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
@@ -34,16 +27,11 @@ Plug 'rking/ag.vim'
 Plug 'wikitopian/hardmode'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'janko-m/vim-test'
-Plug 'jamshedvesuna/vim-markdown-preview'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'Yggdroot/indentline'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'rizzatti/dash.vim'
-Plug 'elmcast/elm-vim'
-Plug 'mhartington/nvim-typescript'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -151,3 +139,7 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
+
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
